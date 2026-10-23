@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects Portfolio - WORLDKING | Web Development, Mobile Apps, Software Solutions">
+    <title>Projects | WORLDKING Developer Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="container">
+        <video class="back-vid" autoplay loop muted playsinline>
+            <source src="videos/galaxy.mp4" type="video/mp4">
+        </video>
+
+        <header>
+            <div class="left">
+                <img src="images/logo3.png" alt="WORLDKING Logo">
+                <h2><span style="color: #72a1dea2;">WORLDKING</span>Code</h2>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="box-icons">
+                <a href="https://youtube.com" target="_blank"><i class='bx bxl-youtube'></i></a>
+                <a href="https://github.com/Gilbert-sudo-png"target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+
+            <button class="menu-icon"><i class='bx bx-menu'></i></button>
+        </header>
+
+        <aside class="sidebar">
+            <button class="close-icon"><i class='bx bx-x'></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-sidebar">
+                <a href="https://youtube.com" target="_blank"><i class='bx bxl-youtube'></i></a>
+                <a href="https://github.com" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+        </aside>
+
+        <!-- Projects Hero -->
+        <section class="projects-hero">
+            <h1 class="section-title autoDisplay" data-aos="fade-down">
+                My <span class="gradient">Projects</span>
+            </h1>
+            <p class="projects-subtitle" data-aos="fade-up">
+                A collection of work that showcases my skills and passion
+            </p>
+            
+            <!-- Project Filters -->
+            <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="my-project projects-page">
+            <!-- Project 1 -->
+            <article class="project-card" data-aos="fade-up" data-aos-duration="800" data-category="web">
+                <div class="project-vidbox autoBlur">
+                    <video loop class="project-video" data-video-id="1">
+                        <source src="videos/project1.mp4" type="video/mp4">
+                    </video>
+                    <div class="hover-sign"></div>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="project-info fadein-left">
+                    <div class="project-meta">
+                        <span class="project-tag">Web Development</span>
+                        <span class="project-date">2026</span>
+                    </div>
+                    <h3>Animated <span class="gradient">Gaming</span> Website</h3>
+                    <p>An immersive gaming website featuring smooth scroll animations, interactive elements, 
+                       and responsive design. Built with modern web technologies for optimal performance.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">GSAP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <button class="btn-project">
+                                <i class='bx bx-link-external'></i> Live Demo
+                            </button>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <button class="btn-project btn-secondary">
+                                <i class='bx bxl-github'></i> Source Code
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card project-reverse" data-aos="fade-up" data-aos-duration="900" data-category="design fullstack">
+                <div class="project-vidbox autoBlur">
+                    <video loop class="project-video" data-video-id="2">
+                        <source src="videos/project2.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="project-info fadein-left">
+                    <div class="project-meta">
+                        <span class="project-tag">Portfolio Design</span>
+                        <span class="project-date">2026</span>
+                    </div>
+                    <h3>Modern <span class="gradient">Portfolio</span> Website</h3>
+                    <p>A sleek, professional portfolio template with dark mode support, smooth transitions, 
+                       and interactive components. Designed to showcase creative work beautifully.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">Framer Motion</span>
+                        <span class="tech-badge">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">
+                            <button class="btn-project">
+                                <i class='bx bx-link-external'></i> View Live
+                            </button>
+                        </a>
+                        <a href="#" target="_blank">
+                            <button class="btn-project btn-secondary">
+                                <i class='bx bxl-github'></i> GitHub Repo
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card" data-aos="fade-up" data-aos-duration="1000" data-category="web">
+                <div class="project-vidbox autoBlur">
+                    <video loop class="project-video" data-video-id="3">
+                        <source src="videos/project3.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="project-info fadein-left">
+                    <div class="project-meta">
+                        <span class="project-tag">Landing Page</span>
+                        <span class="project-date">2025</span>
+                    </div>
+                    <h3>Movie <span class="gradient">Landing</span> Page</h3>
+                    <p>A visually stunning movie landing page with parallax scrolling, video backgrounds, 
+                       and optimized for conversions. Mobile-first approach ensures perfect experience on all devices.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">ScrollMagic</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">
+                            <button class="btn-project">
+                                <i class='bx bx-link-external'></i> Visit Site
+                            </button>
+                        </a>
+                        <a href="#" target="_blank">
+                            <button class="btn-project btn-secondary">
+                                <i class='bx bxl-github'></i> View Code
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 4 — To-Do List App -->
+            <article class="project-card project-reverse" data-aos="fade-up" data-aos-duration="1100" data-category="web">
+                <div class="project-vidbox autoBlur">
+                    <video loop class="project-video">
+                        <source src="videos/todo-app2.mp4"type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="project-info fadein-left">
+                    <div class="project-meta">
+                        <span class="project-tag">Web App</span>
+                        <span class="project-date">2026</span>
+                    </div>
+                    <h3>TaskMaster <span class="gradient">To-Do</span> App</h3>
+                    <p>A fully-featured task management app with CRUD operations, priority levels, categories,
+                       due dates, search, filter, drag-and-drop reordering, dark mode, and local storage persistence.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Local Storage</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="../../todo-app/index.html" target="_blank" rel="noopener noreferrer">
+                            <button class="btn-project">
+                                <i class='bx bx-link-external'></i> Live Demo
+                            </button>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <button class="btn-project btn-secondary">
+                                <i class='bx bxl-github'></i> Source Code
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" data-aos="fade-up">
+            <div class="cta-content">
+                <h2>Have a project in <span class="gradient">mind</span>?</h2>
+                <p>Let's discuss how I can help bring your vision to life</p>
+                <button class="btn-cta" onclick="location.href='contacts.html'">
+                    <i class='bx bx-conversation'></i> Start a Conversation
+                </button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2026 Made with <span class="heart">❤️</span> by <span class="gradient">WORLDKING</span></p>
+                </div>
+                <div class="box-icons footer-social">
+                    <a href="https://youtube.com" target="_blank"><i class='bx bxl-youtube'></i></a>
+                    <a href="https://github.com" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <button class="scroll-to-top"><i class='bx bx-up-arrow-alt'></i></button>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
