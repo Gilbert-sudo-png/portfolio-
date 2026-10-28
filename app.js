@@ -334,6 +334,37 @@ document.querySelectorAll('.value-card, .skill-category, .location-badge').forEa
     fadeObserver.observe(el);
 });
 
+// ── Alternating Project Slide-in (IntersectionObserver) ──────────────
+// Targets elements with .proj-slide-left / .proj-slide-right
+// Cards start with .proj-hidden (opacity:0, translated off-screen)
+// and get .proj-visible added when they scroll into view.
+(function initProjectSlideObserver() {
+    const slideEls = document.querySelectorAll('.proj-slide-left, .proj-slide-right');
+    if (!slideEls.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('proj-hidden');
+                    entry.target.classList.add('proj-visible');
+                    // Once visible, no need to keep watching
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+
+    slideEls.forEach((el) => {
+        // Ensure the hidden class is present before the first intersection check
+        if (!el.classList.contains('proj-visible')) {
+            el.classList.add('proj-hidden');
+        }
+        observer.observe(el);
+    });
+})();
+
 // ── Console Branding ──────────────────────────────
 console.log('%c WORLDKING Portfolio ', 'background: linear-gradient(135deg, #0099ff, #7e42a7); color: white; font-size: 18px; padding: 10px 20px; border-radius: 8px; font-weight: bold;');
 console.log('%c Built with HTML · CSS · JavaScript ', 'color: #72a1de; font-size: 13px;');

@@ -212,9 +212,23 @@
             <h2 class="section-title autoDisplay">
                 Featured Projects <span class="gradient">👨‍💻</span>
             </h2>
-            
-            <div class="project-card" data-aos="fade-up" data-aos-duration="800">
-                <div class="project-info fadein-left">
+
+            <!-- Project 1 (odd → visual LEFT, text RIGHT) -->
+            <div class="project-card proj-odd proj-slide-left proj-hidden">
+                <!-- Visual side -->
+                <div class="project-visual">
+                    <div class="project-visual-placeholder">
+                        <i class="bx bx-brain proj-category-icon"></i>
+                        <span class="proj-number">01</span>
+                        <div class="proj-visual-tags">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">scikit-learn</span>
+                            <span class="tech-badge">ML</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text side -->
+                <div class="project-info proj-slide-right proj-hidden">
                     <div class="project-tag">ML / Final Year Project</div>
                     <h3>StudyMind <span class="gradient">Adaptive</span> Scheduler</h3>
                     <p>Final-year project: adaptive study scheduling system powered by machine learning. Builds a personalised study plan and adjusts based on performance, defended before a panel.</p>
@@ -232,8 +246,22 @@
                 </div>
             </div>
 
-            <div class="project-card project-reverse" data-aos="fade-up" data-aos-duration="900">
-                <div class="project-info fadein-left">
+            <!-- Project 2 (even → text LEFT, visual RIGHT) -->
+            <div class="project-card proj-even proj-slide-right proj-hidden">
+                <!-- Visual side -->
+                <div class="project-visual">
+                    <div class="project-visual-placeholder">
+                        <i class="bx bxs-home proj-category-icon"></i>
+                        <span class="proj-number">02</span>
+                        <div class="proj-visual-tags">
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">Supabase</span>
+                            <span class="tech-badge">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text side -->
+                <div class="project-info proj-slide-left proj-hidden">
                     <div class="project-tag">Mobile App</div>
                     <h3>SafeRent <span class="gradient">Rental</span> Marketplace</h3>
                     <p>Rental marketplace for the Nigerian market with AI-powered fraud detection (RandomForest), roommate matching (cosine similarity), neighborhood scoring via Google Places API, and Paystack payments.</p>
@@ -251,8 +279,22 @@
                 </div>
             </div>
 
-            <div class="project-card" data-aos="fade-up" data-aos-duration="1000">
-                <div class="project-info fadein-left">
+            <!-- Project 3 (odd → visual LEFT, text RIGHT) -->
+            <div class="project-card proj-odd proj-slide-left proj-hidden">
+                <!-- Visual side -->
+                <div class="project-visual">
+                    <div class="project-visual-placeholder">
+                        <i class="bx bxl-flutter proj-category-icon"></i>
+                        <span class="proj-number">03</span>
+                        <div class="proj-visual-tags">
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">Agora SDK</span>
+                            <span class="tech-badge">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text side -->
+                <div class="project-info proj-slide-right proj-hidden">
                     <div class="project-tag">Mobile App</div>
                     <h3>Vybe <span class="gradient">Social</span> App</h3>
                     <p>Invite-only social app for close friend groups: live video calls, photo/video posts, streaks, and in-call group games. Android-first, launching on Google Play.</p>
@@ -270,8 +312,22 @@
                 </div>
             </div>
 
-            <div class="project-card project-reverse" data-aos="fade-up" data-aos-duration="1000">
-                <div class="project-info fadein-left">
+            <!-- Project 4 (even → text LEFT, visual RIGHT) -->
+            <div class="project-card proj-even proj-slide-right proj-hidden">
+                <!-- Visual side -->
+                <div class="project-visual">
+                    <div class="project-visual-placeholder">
+                        <i class="bx bxl-react proj-category-icon"></i>
+                        <span class="proj-number">04</span>
+                        <div class="proj-visual-tags">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Tailwind</span>
+                            <span class="tech-badge">Paystack</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text side -->
+                <div class="project-info proj-slide-left proj-hidden">
                     <div class="project-tag">Web App</div>
                     <h3>NUESA ACU <span class="gradient">Student</span> Portal</h3>
                     <p>Official student portal at nuesaacu.com for fee payments, faculty updates, and an online voting system serving ~80 students. Integrated Paystack.</p>
@@ -289,7 +345,7 @@
                 </div>
             </div>
 
-            <div class="view-all-projects" data-aos="fade-up">
+            <div class="view-all-projects">
                 <a href="projects.html">
                     <button class="btn-view-all">
                         View All Projects <i class='bx bx-right-arrow-alt'></i>

@@ -2277,3 +2277,187 @@ header.scrolled {
     background: linear-gradient(135deg, #4f46e5, #7c3aed, #a78bfa) !important;
     font-size: 6rem !important;
 }
+
+/* ===============================================
+   ALTERNATING PROJECT LAYOUT
+   Odd  (default)   : visual LEFT,  text RIGHT
+   Even (.proj-even): text  LEFT,  visual RIGHT
+   =============================================== */
+
+/* Wipe out the old bare .project-card flex so the new layout drives */
+.my-project .project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5%;
+    margin-bottom: 120px;
+    /* reset old flex properties */
+    flex-direction: unset;
+}
+
+/* Even projects: swap column order */
+.my-project .project-card.proj-even {
+    direction: rtl; /* flip the two columns */
+}
+.my-project .project-card.proj-even > * {
+    direction: ltr; /* restore text direction inside cells */
+}
+
+/* ── Visual Side ── */
+.project-visual {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-visual-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-slow);
+}
+
+.project-visual-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-1);
+    opacity: 0.07;
+    border-radius: 20px;
+    transition: opacity var(--transition-slow);
+}
+
+.project-visual-placeholder:hover::before {
+    opacity: 0.14;
+}
+
+.project-visual-placeholder:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.02);
+}
+
+/* Big project number */
+.proj-number {
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    background: var(--gradient-1);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 3s ease infinite;
+    z-index: 1;
+}
+
+/* Tech stack badges inside visual */
+.proj-visual-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    z-index: 1;
+}
+
+.proj-visual-tags .tech-badge {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    background: rgba(114, 161, 222, 0.15);
+    border: 1px solid rgba(114, 161, 222, 0.4);
+}
+
+/* Category icon inside visual */
+.proj-category-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* ── Scroll-triggered slide animations ── */
+
+/* Starting (hidden) states — added by JS before observing */
+.proj-slide-left.proj-hidden {
+    opacity: 0;
+    transform: translateX(-80px);
+}
+
+.proj-slide-right.proj-hidden {
+    opacity: 0;
+    transform: translateX(80px);
+}
+
+/* Animated-in state */
+.proj-slide-left,
+.proj-slide-right {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.proj-slide-left.proj-visible,
+.proj-slide-right.proj-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger: text arrives slightly after the visual */
+.project-card .project-info {
+    transition-delay: 0.15s;
+}
+
+/* ── Responsive ── */
+
+/* On tablet and below, stack vertically (image on top, text below) */
+@media (max-width: 768px) {
+    .my-project .project-card,
+    .my-project .project-card.proj-even {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .my-project .project-card.proj-even > * {
+        direction: ltr;
+    }
+
+    /* Visual always on top */
+    .project-visual {
+        order: -1;
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-info {
+        order: 1;
+    }
+
+    .my-project .project-card {
+        margin-bottom: 70px;
+    }
+
+    /* On mobile, slide in from bottom instead of sides */
+    .proj-slide-left.proj-hidden,
+    .proj-slide-right.proj-hidden {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    .proj-slide-left.proj-visible,
+    .proj-slide-right.proj-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
